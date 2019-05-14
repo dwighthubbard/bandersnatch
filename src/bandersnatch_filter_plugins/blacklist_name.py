@@ -4,9 +4,11 @@ from typing import List
 from packaging.requirements import Requirement
 from packaging.version import InvalidVersion, Version
 
+
 from bandersnatch.filter import FilterProjectPlugin, FilterReleasePlugin
 
-logger = logging.getLogger("bandersnatch")
+
+logger = logging.getLogger("bandersnatch")  # pylint: disable=C0103
 
 
 class BlacklistProject(FilterProjectPlugin):
