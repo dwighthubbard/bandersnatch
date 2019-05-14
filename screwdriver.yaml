@@ -1,4 +1,7 @@
 version: 4
+shared:
+  environment:
+    PACKAGE_DIR: src
 jobs:
   validate_test:
     template: python/validate_unittest
