@@ -8,6 +8,10 @@ import pkg_resources
 
 from .configuration import BandersnatchConfig
 
+
+PLUGiN_API_REVISION = 2
+
+
 loaded_filter_plugins: Dict[str, List["Filter"]] = defaultdict(list)
 
 
@@ -135,7 +139,7 @@ def filter_project_plugins() -> Iterable[Filter]:
     list of bandersnatch.filter.Filter:
         List of objects derived from the bandersnatch.filter.Filter class
     """
-    return load_filter_plugins("bandersnatch_filter_plugins.project")
+    return load_filter_plugins(f"bandersnatch_filter_plugins.v{PLUGiN_API_REVISION}.project")
 
 
 def filter_release_plugins() -> Iterable[Filter]:
@@ -147,4 +151,4 @@ def filter_release_plugins() -> Iterable[Filter]:
     list of bandersnatch.filter.Filter:
         List of objects derived from the bandersnatch.filter.Filter class
     """
-    return load_filter_plugins("bandersnatch_filter_plugins.release")
+    return load_filter_plugins(f"bandersnatch_filter_plugins.v{PLUGiN_API_REVISION}.release")
