@@ -48,7 +48,7 @@ class LatestReleaseFilter(FilterReleasePlugin):
             return
 
         versions_pair = map(lambda v: (parse(v), v), versions)
-        latest = sorted(versions_pair)[-self.keep :]  # noqa: E203
+        latest = sorted(versions_pair)[-self.keep:]  # noqa: E203
         latest = list(map(itemgetter(1), latest))
 
         current_version = info.get("version")
